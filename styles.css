@@ -1,0 +1,395 @@
+.navbar {
+    height: 65px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 0 40px;
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.navbar-collapse {
+    background-color: transparent;
+    padding: 0;
+    position: static;
+    width: auto;
+}
+
+@media (max-width: 768px) {
+    .navbar-collapse {
+        background-color: black;
+        padding: 10px;
+        position: absolute;
+        top: 65px;
+        right: 0px;
+        min-width: 140px;
+    }
+
+    .navbar-nav {
+        width: 100%;
+        text-align: right;
+    }
+
+    .navbar-nav .nav-link {
+        color: white !important;
+        text-align: left;
+        padding-right: 25px;
+    }
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.961);
+    font-size: 17px;
+    font-weight: 400;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link.active,
+.nav-link:hover {
+    color: #0d6efd;
+    /* Blue on hover */
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    /* Adjusted position */
+    width: 0;
+    /* Initially hidden */
+    height: 3px;
+    background-color: transparent;
+    transform: translateX(-50%);
+    transition: width 0.3s ease-in-out, background-color 0.3s;
+    border-radius: 20px;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 30px;
+    /* Adjusted width */
+    background-color: #0d6efd;
+    /* Blue */
+}
+
+@media (max-width: 768px) {
+    .nav-link::after {
+        left: 0;
+        transform: none;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+
+body {
+    padding-top: 70px;
+}
+
+/* Name Styling with Elegant Blue */
+.font {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #2876c9;
+    /* Royal Blue */
+}
+
+/* Profile Image with Gradient Border */
+.profile-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    padding: 5px;
+    background: linear-gradient(45deg, #0f4c75, #3282b8, #bbe1fa, #1b262c);
+}
+
+/* Contact Details Styling */
+.contact-info {
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: #1b262c;
+    /* Deep Navy */
+    font-weight: 400;
+}
+
+/* Stylish Icons with Blue Shades */
+.contact-info i {
+    font-size: 1.3rem;
+    margin-right: 8px;
+}
+
+.bi-envelope {
+    color: #0077b6;
+}
+
+/* Dark Blue */
+.bi-phone {
+    color: #00b4d8;
+}
+
+/* Light Blue */
+.bi-linkedin {
+    color: #00509d;
+}
+
+/* LinkedIn Dark Blue */
+.bi-github {
+    color: #1b262c;
+}
+
+/* Dark Navy */
+
+/* Styling for Links */
+.contact-info a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #0077b6;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: #00b4d8;
+    /* Light Blue Hover */
+}
+
+.contact-info p {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+/* Section Styling */
+section {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Active Animation */
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline {
+    list-style: none;
+    padding: 0;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #2876c9af;
+}
+
+.timeline li {
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 20px;
+}
+
+.timeline-content {
+    background: #2876c9af;
+    color: white;
+    padding: 15px;
+    height: 100px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+}
+
+.icon {
+    position: absolute;
+    left: -35px;
+    top: 15px;
+    font-size: 24px;
+    background: #17a2b8;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(23, 162, 184, 0.7);
+}
+
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline li {
+        padding-left: 40px;
+    }
+
+    .icon {
+        left: -30px;
+    }
+}
+
+.project-card {
+    position: relative;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Dark Overlay for Readability */
+.project-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    /* Slight dark overlay */
+    transition: background 0.3s ease-in-out;
+}
+
+/* Text Styling */
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effects */
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-card:hover::before {
+    background: rgba(0, 0, 0, 0.3);
+    /* Reduce overlay darkness on hover */
+}
+
+.project-desc {
+    font-size: 14px;
+}
+
+/* Center the form */
+.contact-form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Input field container */
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+/* Input fields */
+.input-container input,
+.input-container textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #4e4d4de8;
+    border-radius: 8px;
+    background: transparent;
+    outline: none;
+}
+
+/* Labels inside input fields */
+.input-container label {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    font-weight: bold;
+    color: #555;
+    transition: 0.3s ease;
+    pointer-events: none;
+}
+
+/* When user types, move label up */
+.input-container input:focus+label,
+.input-container input:valid+label,
+.input-container textarea:focus+label,
+.input-container textarea:valid+label {
+    top: 8px;
+    font-size: 0.8rem;
+    color: #000;
+}
+
+/* Button */
+.send-btn {
+    background: #2876c9;
+    color: #fff;
+    font-size: 0.9rem;
+    /* Reduce font size */
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    /* Slightly smaller radius */
+    padding: 10px 24px;
+    /* Reduce button size */
+    cursor: pointer;
+    transition: 0.3s ease;
+    display: block;
+    margin-left: auto;
+    /* Aligns to the right */
+}
+
+
+/* Button hover */
+.send-btn:hover {
+    background: #1A49C3;
+}
+
+/* Custom Toastr Success Message */
+.toast-success {
+    background-color: #28a745 !important;
+    /* Green background */
+    color: white !important;
+    /* White text */
+    border-radius: 8px !important;
+    /* Rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    /* Soft shadow */
+}
+
+.toast-error {
+    background-color: #d81919 !important;
+    /* Green background */
+    color: white !important;
+    /* White text */
+    border-radius: 8px !important;
+    /* Rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    /* Soft shadow */
+}
